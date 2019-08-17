@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 107114141}
   - component: {fileID: 107114140}
   m_Layer: 0
-  m_Name: Earth p2 (1)
+  m_Name: Earth p3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,8 +150,8 @@ Transform:
   m_LocalPosition: {x: -69.7, y: -7.362079, z: 0.58567405}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 12
+  m_Father: {fileID: 1987818941}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &107114140
 BoxCollider:
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 125886422}
   - component: {fileID: 125886421}
   m_Layer: 0
-  m_Name: Wind p2 (1)
+  m_Name: Wind p3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,8 +241,8 @@ Transform:
   m_LocalPosition: {x: 56.1, y: -7.362079, z: 0.58567405}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 11
+  m_Father: {fileID: 935805443}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &125886421
 BoxCollider:
@@ -302,6 +302,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125886419}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &161274852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 161274853}
+  m_Layer: 0
+  m_Name: Water Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &161274853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161274852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 399771335}
+  - {fileID: 375675423}
+  - {fileID: 164486196}
+  m_Father: {fileID: 503874225}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164486195
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +348,7 @@ GameObject:
   - component: {fileID: 164486198}
   - component: {fileID: 164486197}
   m_Layer: 0
-  m_Name: Water p2 (1)
+  m_Name: Water p3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,8 +365,8 @@ Transform:
   m_LocalPosition: {x: -7.54877, y: -7.4, z: -62.7}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 10
+  m_Father: {fileID: 161274853}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &164486197
 BoxCollider:
@@ -515,8 +548,8 @@ Transform:
   m_LocalPosition: {x: -28, y: -7.362079, z: 0.58567405}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 4
+  m_Father: {fileID: 1987818941}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &257466265
 BoxCollider:
@@ -606,8 +639,8 @@ Transform:
   m_LocalPosition: {x: -7.54877, y: -7.4, z: -41.4}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 6
+  m_Father: {fileID: 161274853}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &375675424
 BoxCollider:
@@ -697,8 +730,8 @@ Transform:
   m_LocalPosition: {x: -7.54877, y: -7.4, z: -20.1}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 2
+  m_Father: {fileID: 161274853}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &399771336
 BoxCollider:
@@ -786,18 +819,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1123945580}
-  - {fileID: 1971184345}
-  - {fileID: 399771335}
-  - {fileID: 737120920}
-  - {fileID: 257466264}
-  - {fileID: 1366752741}
-  - {fileID: 375675423}
-  - {fileID: 719688006}
-  - {fileID: 1391797259}
-  - {fileID: 1520645144}
-  - {fileID: 164486196}
-  - {fileID: 125886420}
-  - {fileID: 107114139}
+  - {fileID: 828101940}
+  - {fileID: 161274853}
+  - {fileID: 935805443}
+  - {fileID: 1987818941}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1021,8 +1046,8 @@ Transform:
   m_LocalPosition: {x: 34.7, y: -7.362079, z: 0.58567405}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 7
+  m_Father: {fileID: 935805443}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &719688007
 BoxCollider:
@@ -1112,8 +1137,8 @@ Transform:
   m_LocalPosition: {x: 13.3, y: -7.362079, z: 0.58567405}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 3
+  m_Father: {fileID: 935805443}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &737120921
 BoxCollider:
@@ -1173,6 +1198,72 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737120919}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &828101939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 828101940}
+  m_Layer: 0
+  m_Name: Fire Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &828101940
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828101939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1971184345}
+  - {fileID: 1366752741}
+  - {fileID: 1520645144}
+  m_Father: {fileID: 503874225}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &935805442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 935805443}
+  m_Layer: 0
+  m_Name: Wind Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &935805443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935805442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 737120920}
+  - {fileID: 719688006}
+  - {fileID: 125886420}
+  m_Father: {fileID: 503874225}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1092819724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,8 +1592,8 @@ Transform:
   m_LocalPosition: {x: -7.54877, y: -7.4, z: 42.6}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 5
+  m_Father: {fileID: 828101940}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1366752742
 BoxCollider:
@@ -1683,8 +1774,8 @@ Transform:
   m_LocalPosition: {x: -48.7, y: -7.362079, z: 0.58567405}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 8
+  m_Father: {fileID: 1987818941}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1391797260
 BoxCollider:
@@ -1943,7 +2034,7 @@ GameObject:
   - component: {fileID: 1520645146}
   - component: {fileID: 1520645145}
   m_Layer: 0
-  m_Name: Fire p2 (1)
+  m_Name: Fire p3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1960,8 +2051,8 @@ Transform:
   m_LocalPosition: {x: -7.54877, y: -7.4, z: 63.5}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 9
+  m_Father: {fileID: 828101940}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1520645145
 BoxCollider:
@@ -2144,8 +2235,8 @@ Transform:
   m_LocalPosition: {x: -7.54877, y: -7.4, z: 21.3}
   m_LocalScale: {x: 19.274, y: 14.787, z: 19.376}
   m_Children: []
-  m_Father: {fileID: 503874225}
-  m_RootOrder: 1
+  m_Father: {fileID: 828101940}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1971184346
 BoxCollider:
@@ -2296,3 +2387,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 87.503006, y: 0.721, z: -0.721}
+--- !u!1 &1987818940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1987818941}
+  m_Layer: 0
+  m_Name: Earth Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1987818941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987818940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 257466264}
+  - {fileID: 1391797259}
+  - {fileID: 107114139}
+  m_Father: {fileID: 503874225}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
