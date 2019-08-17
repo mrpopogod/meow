@@ -4,27 +4,10 @@ using UnityEngine;
 
 public class CatMovement : MonoBehaviour
 {
-    private float speed = 2.0f;
-    public GameObject Cat;
-
-    void Update()
-    {
-
-        if (Input.GetKey(KeyCode.D)) 
-        {
-            transform.position += Vector3.right * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += Vector3.left * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += Vector3.forward * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position += Vector3.back * speed * Time.deltaTime;
-        }
+    [SerializeField] public float movementSpeed = 5.0f;
+    [SerializeField] public float rotationSpeed = 200.0f;
+    void Update () {
+        transform.Rotate(0, Input.GetAxis("Horizontal") * Time.deltaTime * rotationSpeed, 0);
+        transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
     }
 }
