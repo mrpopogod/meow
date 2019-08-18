@@ -83,7 +83,7 @@ public class CatMovement : MonoBehaviour
             _isFalling = true;
         }
 
-        if (_rb.velocity.y == 0 && _isFalling)
+        if (Mathf.Abs(_rb.velocity.y) < 0.001 && _isFalling)
         {
             _isFalling = false;
             _isJumping = false;
