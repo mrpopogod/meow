@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 5037964292483966844}
+  - component: {fileID: 8833513514085527448}
   m_Layer: 0
   m_Name: Tree Green 2
   m_TagString: Untagged
@@ -92,3 +93,16 @@ CapsuleCollider:
   m_Height: 7.92
   m_Direction: 1
   m_Center: {x: 0.012335002, y: 0.35365796, z: -0.015222192}
+--- !u!114 &8833513514085527448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bba3ea90635b47438bd9d758dfba22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stump: {fileID: 100000, guid: 4b1d409652eb77f4fa9dbe3d1360098b, type: 3}
