@@ -1174,7 +1174,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114290613337804586, guid: 1cc7cbbec1f220841a9ed6c3046dddfb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1cc7cbbec1f220841a9ed6c3046dddfb, type: 3}
 --- !u!1 &737120919
 GameObject:
@@ -1535,7 +1536,7 @@ MonoBehaviour:
   movementSpeed: 2
   sprintSpeed: 10
   rotationSpeed: 200
-  jumpSpeed: 5
+  jumpSpeed: 6
 --- !u!4 &1102430442 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400040, guid: ae345304e26649041bd190310d2d2405,
