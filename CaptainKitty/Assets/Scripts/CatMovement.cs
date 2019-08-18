@@ -7,19 +7,19 @@ public class CatMovement : MonoBehaviour
     private int jumpTimer = 0;
     private Rigidbody _rb;
     private bool _isJumping;
-    private float _startHeight;
+    private bool _isFalling;
 
     public void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _isJumping = false;
-        _startHeight = transform.position.y;
+        _isFalling = false;
     }
 
     [SerializeField] public float movementSpeed = 5.0f;
     [SerializeField] public float sprintSpeed = 10.0f;
     [SerializeField] public float rotationSpeed = 200.0f;
-    [SerializeField] public float jumpSpeed = 3.0f;
+    [SerializeField] public float jumpSpeed = 6.0f;
 
     void Update () {
         var speed = movementSpeed;
@@ -32,7 +32,6 @@ public class CatMovement : MonoBehaviour
         transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * speed);
 
         catAnimator = GetComponent<Animator>();
-        Debug.Log("Moving at speed: " + (Mathf.Abs(Input.GetAxis("Horizontal") * speed) + Mathf.Abs(Input.GetAxis("Vertical") * speed)));
         catAnimator.SetFloat("MoveX", Input.GetAxis("Horizontal"));
         catAnimator.SetFloat("MoveY", Input.GetAxis("Vertical"));
         catAnimator.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Horizontal")* speed) + (Mathf.Abs(Input.GetAxis("Vertical")* speed))));
@@ -47,13 +46,22 @@ public class CatMovement : MonoBehaviour
             //transform.Translate(0, jumpSpeed * Time.deltaTime, 0);//Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
         }
 
-        if (transform.position.y <= _startHeight)
+        if (_rb.velocity.y < 0 && _isJumping && !_isFalling)
         {
-            _isJumping = false;
+            _isFalling = true;
         }
+
+        if (_rb.velocity.y == 0 && _isFalling)
+        {
+            _isFalling = false;
+            _isJumping = false;
+            catAnimator.SetBool("Jump", false);
+        }
+
         //if (Input.GetAxis("Jump") == 0.0f)
         //{
         //    catAnimator.SetBool("Jump", false);
         //}
     }
+
 }
