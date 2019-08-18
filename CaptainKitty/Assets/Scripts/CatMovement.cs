@@ -21,7 +21,7 @@ public class CatMovement : MonoBehaviour
     [SerializeField] public float rotationSpeed = 200.0f;
     [SerializeField] public float jumpSpeed = 6.0f;
 
-    void Update () {
+    public void Update () {
         var speed = movementSpeed;
         if (Input.GetKey("left shift") || Input.GetKey("right shift"))
         {
@@ -42,8 +42,6 @@ public class CatMovement : MonoBehaviour
             catAnimator.SetBool("Jump", true);
             _isJumping = true;
             _rb.velocity = new Vector3(_rb.velocity.x, jumpSpeed, _rb.velocity.z);
-            //transform.Rotate(0, jumpSpeed * Time.deltaTime * rotationSpeed, 0);
-            //transform.Translate(0, jumpSpeed * Time.deltaTime, 0);//Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
         }
 
         if (_rb.velocity.y < 0 && _isJumping && !_isFalling)
@@ -57,11 +55,6 @@ public class CatMovement : MonoBehaviour
             _isJumping = false;
             catAnimator.SetBool("Jump", false);
         }
-
-        //if (Input.GetAxis("Jump") == 0.0f)
-        //{
-        //    catAnimator.SetBool("Jump", false);
-        //}
     }
 
 }
