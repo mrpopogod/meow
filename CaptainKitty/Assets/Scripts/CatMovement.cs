@@ -68,8 +68,8 @@ public class CatMovement : MonoBehaviour
         catAnimator.SetFloat("MoveX", Input.GetAxis("Horizontal"));
         catAnimator.SetFloat("MoveY", Input.GetAxis("Vertical"));
         //Vertical is actually just the speed, so set Animator Speed directly to Vertical
-        catAnimator.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Vertical")));//(Mathf.Abs(Input.GetAxis("Horizontal")* speed) + (Mathf.Abs(Input.GetAxis("Vertical")* speed))));
 
+        
         //if Fire 1 (jump) is pressed
         if (Input.GetAxis("Jump") > 0.0f && !_isJumping)
         {
@@ -89,6 +89,9 @@ public class CatMovement : MonoBehaviour
             _isJumping = false;
             catAnimator.SetBool("Jump", false);
         }
+        //Debug.Log("Speed = " + (_rb.velocity.magnitude / Time.deltaTime));
+        catAnimator.SetFloat("Speed", Mathf.Abs(moveDistance)/Time.deltaTime);// Mathf.Abs(moveDistance));// Input.GetAxis("Vertical")));//(Mathf.Abs(Input.GetAxis("Horizontal")* speed) + (Mathf.Abs(Input.GetAxis("Vertical")* speed))));
+
     }
 
 }
