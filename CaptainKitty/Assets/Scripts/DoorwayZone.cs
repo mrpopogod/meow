@@ -1,15 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorwayZone : MonoBehaviour
 {
-    public void OnTriggerEnter(Collider other)
+
+    [SerializeField] GameObject zoneBoundary;
+    private ZoneBoundary boundary;
+
+    private void Awake()
     {
-        Debug.Log(other.name + " has entered the " + this.name);
-        if (other != null)
-        {
-            //((Cat)other).movement
-        }
+        boundary = zoneBoundary.GetComponent<ZoneBoundary>();
     }
+
+    public void OnTriggerEnter(Collider other)
+      {
+          Debug.Log($"{other.name} has crossed the {this.boundary.Name} doorway");
+          if (other != null)
+          {
+              //((Cat)other).movement
+          }
+      }
 }

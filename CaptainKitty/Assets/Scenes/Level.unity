@@ -127,10 +127,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7462571816494502932, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
+        type: 3}
+      propertyPath: zone
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8381572705945278486, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
         type: 3}
       propertyPath: m_Name
-      value: ZoneConstrainer (1)
+      value: PlainsZoneConstrainer
       objectReference: {fileID: 0}
     - target: {fileID: 8381572705945278487, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
         type: 3}
@@ -189,6 +194,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 850c4eb3ecf58ab44a56e1fce85e96f4, type: 3}
+--- !u!1 &51739581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8381572705945278486, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 51739580}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &52293868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,7 +210,7 @@ PrefabInstance:
     - target: {fileID: 8381572705945278486, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
         type: 3}
       propertyPath: m_Name
-      value: ZoneConstrainer (3)
+      value: DesertZoneConstrainer
       objectReference: {fileID: 0}
     - target: {fileID: 8381572705945278487, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
         type: 3}
@@ -258,6 +269,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 850c4eb3ecf58ab44a56e1fce85e96f4, type: 3}
+--- !u!1 &52293869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8381572705945278486, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 52293868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &107114138
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +764,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257466263}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &257472765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8381572705945278486, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1824140154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &281326450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -757,7 +780,7 @@ PrefabInstance:
     - target: {fileID: 832727718785305000, guid: 96594cf43f0acae43bf6c4d1162ae571,
         type: 3}
       propertyPath: m_Name
-      value: Wall (1)
+      value: MountainWall
       objectReference: {fileID: 0}
     - target: {fileID: 832727718785305001, guid: 96594cf43f0acae43bf6c4d1162ae571,
         type: 3}
@@ -814,6 +837,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1312213487176000072, guid: 96594cf43f0acae43bf6c4d1162ae571,
+        type: 3}
+      propertyPath: m_Name
+      value: PlainsDoorwayTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 732719778914316660, guid: 96594cf43f0acae43bf6c4d1162ae571,
+        type: 3}
+      propertyPath: zone
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 732719778914316660, guid: 96594cf43f0acae43bf6c4d1162ae571,
+        type: 3}
+      propertyPath: zoneBoundary
+      value: 
+      objectReference: {fileID: 51739581}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96594cf43f0acae43bf6c4d1162ae571, type: 3}
 --- !u!1 &306562294
@@ -2121,7 +2159,7 @@ PrefabInstance:
     - target: {fileID: 832727718785305000, guid: 96594cf43f0acae43bf6c4d1162ae571,
         type: 3}
       propertyPath: m_Name
-      value: Wall
+      value: ForestWall
       objectReference: {fileID: 0}
     - target: {fileID: 832727718785305001, guid: 96594cf43f0acae43bf6c4d1162ae571,
         type: 3}
@@ -2178,6 +2216,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1312213487176000072, guid: 96594cf43f0acae43bf6c4d1162ae571,
+        type: 3}
+      propertyPath: m_Name
+      value: ForestDoorwayTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 732719778914316660, guid: 96594cf43f0acae43bf6c4d1162ae571,
+        type: 3}
+      propertyPath: zoneBoundary
+      value: 
+      objectReference: {fileID: 8381572704325630269}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96594cf43f0acae43bf6c4d1162ae571, type: 3}
 --- !u!1 &1276182823 stripped
@@ -3103,7 +3151,7 @@ PrefabInstance:
     - target: {fileID: 832727718785305000, guid: 96594cf43f0acae43bf6c4d1162ae571,
         type: 3}
       propertyPath: m_Name
-      value: Wall (2)
+      value: RiverWall
       objectReference: {fileID: 0}
     - target: {fileID: 832727718785305001, guid: 96594cf43f0acae43bf6c4d1162ae571,
         type: 3}
@@ -3160,6 +3208,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1312213487176000072, guid: 96594cf43f0acae43bf6c4d1162ae571,
+        type: 3}
+      propertyPath: m_Name
+      value: RiverDoorwayTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 732719778914316660, guid: 96594cf43f0acae43bf6c4d1162ae571,
+        type: 3}
+      propertyPath: zone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 732719778914316660, guid: 96594cf43f0acae43bf6c4d1162ae571,
+        type: 3}
+      propertyPath: zoneBoundary
+      value: 
+      objectReference: {fileID: 257472765}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96594cf43f0acae43bf6c4d1162ae571, type: 3}
 --- !u!1 &1789657846
@@ -3268,10 +3331,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7462571816494502932, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
+        type: 3}
+      propertyPath: zone
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8381572705945278486, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
         type: 3}
       propertyPath: m_Name
-      value: ZoneConstrainer (2)
+      value: RiverZoneConstrainer
       objectReference: {fileID: 0}
     - target: {fileID: 8381572705945278487, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
         type: 3}
@@ -3898,7 +3966,7 @@ PrefabInstance:
     - target: {fileID: 832727718785305000, guid: 96594cf43f0acae43bf6c4d1162ae571,
         type: 3}
       propertyPath: m_Name
-      value: Wall
+      value: DesertWall
       objectReference: {fileID: 0}
     - target: {fileID: 832727718785305001, guid: 96594cf43f0acae43bf6c4d1162ae571,
         type: 3}
@@ -3955,6 +4023,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1312213487176000072, guid: 96594cf43f0acae43bf6c4d1162ae571,
+        type: 3}
+      propertyPath: m_Name
+      value: DesertDoorwayTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 732719778914316660, guid: 96594cf43f0acae43bf6c4d1162ae571,
+        type: 3}
+      propertyPath: zone
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 732719778914316660, guid: 96594cf43f0acae43bf6c4d1162ae571,
+        type: 3}
+      propertyPath: zoneBoundary
+      value: 
+      objectReference: {fileID: 52293869}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96594cf43f0acae43bf6c4d1162ae571, type: 3}
 --- !u!1001 &8381572704325630268
@@ -3964,10 +4047,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7462571816494502932, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
+        type: 3}
+      propertyPath: zone
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8381572705945278486, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
         type: 3}
       propertyPath: m_Name
-      value: ZoneConstrainer
+      value: ForestZoneConstrainer
       objectReference: {fileID: 0}
     - target: {fileID: 8381572705945278487, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
         type: 3}
@@ -4026,3 +4114,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 850c4eb3ecf58ab44a56e1fce85e96f4, type: 3}
+--- !u!1 &8381572704325630269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8381572705945278486, guid: 850c4eb3ecf58ab44a56e1fce85e96f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8381572704325630268}
+  m_PrefabAsset: {fileID: 0}
