@@ -39,7 +39,6 @@ public class CatMovement : MonoBehaviour
         //if Fire 1 (jump) is pressed
         if (Input.GetAxis("Jump") > 0.0f && !_isJumping)
         {
-            Debug.Log("Someone pressed jump and we're not jumping already");
             catAnimator.SetBool("Jump", true);
             _isJumping = true;
             _rb.velocity = new Vector3(_rb.velocity.x, jumpSpeed, _rb.velocity.z);
@@ -47,15 +46,13 @@ public class CatMovement : MonoBehaviour
             //transform.Translate(0, jumpSpeed * Time.deltaTime, 0);//Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed);
         }
 
-        if (_rb.velocity.y < 0)
+        if (_rb.velocity.y < 0 && _isJumping && !_isFalling)
         {
-            Debug.Log("Setting is falling to true");
             _isFalling = true;
         }
 
         if (_rb.velocity.y == 0 && _isFalling)
         {
-            Debug.Log("Setting is falling to false and is jumping to false");
             _isFalling = false;
             _isJumping = false;
             catAnimator.SetBool("Jump", false);
