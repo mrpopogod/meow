@@ -14,6 +14,7 @@ public class TreeBurn : MonoBehaviour
         }
     }
 
+    // TODO: This should be triggered; can be a received event or an OnTriggerEntered with our fire power
     public void Burn()
     {
         // TODO: a particle
