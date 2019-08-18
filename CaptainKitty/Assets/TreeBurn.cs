@@ -17,7 +17,9 @@ public class TreeBurn : MonoBehaviour
     public void Burn()
     {
         // TODO: a particle
-        var stump = Instantiate(_stump, gameObject.transform);
+        var newPosition = gameObject.transform.position;
+        newPosition.y -= 1.7f;
+        Instantiate(_stump, newPosition, gameObject.transform.rotation);
         Destroy(gameObject);
     }
 }
