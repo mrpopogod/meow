@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class ConversationController : MonoBehaviour
 {
-    public Panel conversationPanel = null;
+    public GameObject conversationPanel = null;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +21,11 @@ public class ConversationController : MonoBehaviour
     public void OpenConversation()
     {
         if (conversationPanel == null) return;
-        conversationPanel.gameObject.SetActive(true);
+        conversationPanel.SetActive(true);
     }
     public void CloseConversation()
     {
         if (conversationPanel == null) return;
-        conversationPanel.gameObject.SetActive(false);
+        conversationPanel.SetActive(false);
     }
 }
