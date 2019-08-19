@@ -8,13 +8,23 @@ public class PuzzleTarget : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name + " has entered the " + this.name);
-        Debug.Log(other.name + " has entered the " + this.name);
-        //if (other)
+        
         if (other.gameObject == piece)
         {
-            Debug.Log(other.name + "is my piece..." + this.name);
+            
             other.transform.position = this.transform.position;
-            other.attachedRigidbody.mass = 1000;
+            other.attachedRigidbody.mass = 1000; //TODO: there's probably a better way to lock the piece
+
+            Cat theCat = FindObjectOfType<Cat>();
+
+            if (theCat != null)
+            {
+                Debug.Log("Hey, we solved a puzzle, let's find the cat and let them know we did a good.");
+                Debug.Log(theCat.name);
+
+                
+            }
+
         }
     }
 }

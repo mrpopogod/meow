@@ -109,7 +109,7 @@ public class CatMovement
         }
         //Debug.Log("Speed = " + (_rb.velocity.magnitude / Time.deltaTime));
         catAnimator.SetFloat("Speed", Mathf.Abs(moveDistance)/Time.deltaTime);// Mathf.Abs(moveDistance));// Input.GetAxis("Vertical")));//(Mathf.Abs(Input.GetAxis("Horizontal")* speed) + (Mathf.Abs(Input.GetAxis("Vertical")* speed))));
-
+        //test
     }
 
 }
