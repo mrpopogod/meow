@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PuzzlePiece : MonoBehaviour
 {
+    public GameObject target = null;
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name + " has entered the " + this.name);
+        Debug.Log(other.name + " has run into " + this.name);
         //if (other)
-        if (other.name == "PuzzlePiece")
+        if (other == target)
         {
-            other.transform.position = this.transform.position;
-            other.attachedRigidbody.mass = 1000;
+            Debug.Log(this.name + " has found it's home in " + other.name);
+            //other.transform.position = this.transform.position;
+            //other.attachedRigidbody.mass = 1000;
         }
     }
 }
