@@ -43,8 +43,17 @@ public class CatMovement
         }
     }
 
+    private void HandleWind()
+    {
+        if (Input.GetKey("e") && Time.time > _nextFire)
+        {
+            _nextFire = Time.time + _fireRate;
+        }
+    }
+
     public void Update () {
         HandleFlames();
+        HandleWind();
         var speed = movementSpeed;
         if (Input.GetKey("left shift") || Input.GetKey("right shift"))
         {
