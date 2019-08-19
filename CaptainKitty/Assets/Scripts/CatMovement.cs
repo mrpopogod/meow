@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CatMovement : MonoBehaviour
+public class CatMovement
 {
 
     Animator catAnimator; 
@@ -8,22 +8,25 @@ public class CatMovement : MonoBehaviour
     private Rigidbody _rb;
     private bool _isJumping;
     private bool _isFalling;
+    Transform _transform;
 
-    [SerializeField] public float movementSpeed = 5.0f;
-    [SerializeField] public float sprintSpeed = 10.0f;
-    [SerializeField] public float rotationSpeed = 200.0f;
-    [SerializeField] public float jumpSpeed = 6.0f;
-    [SerializeField] private GameObject _firePrefab = null;
-    [SerializeField] private float _fireRate = 2.0f;
-    [SerializeField] private float _fireLife = 2.0f;
+    private GameObject _firePrefab = null;
+    private float _fireRate = 2.0f;
+    private float _fireLife = 2.0f;
+    private float movementSpeed = 5.0f;
+    private float sprintSpeed = 10.0f;
+    private float rotationSpeed = 200.0f;
+    private float jumpSpeed = 6.0f;
     private float _nextFire;
 
-    public void Start()
+    public CatMovement(Rigidbody rb, Animator animator, Transform transform, GameObject firePrefab)
     {
-        _rb = GetComponent<Rigidbody>();
+        _rb = rb;
+        catAnimator = animator;
         _isJumping = false;
         _isFalling = false;
-        catAnimator = GetComponent<Animator>();
+        _transform = transform;
+        _firePrefab = firePrefab;
     }
 
     private void HandleFlames()
@@ -33,10 +36,10 @@ public class CatMovement : MonoBehaviour
             _nextFire = Time.time + _fireRate;
             var pos = new Vector3(0, 0.5f, 0.5f);
             var rot = Quaternion.Euler(90f, 0, 0);
-            var fire = Instantiate(_firePrefab, transform);
+            var fire = GameObject.Instantiate(_firePrefab, _transform);
             fire.transform.localRotation = rot;
             fire.transform.localPosition = pos;
-            Destroy(fire, _fireLife);
+            GameObject.Destroy(fire, _fireLife);
         }
     }
 
@@ -76,7 +79,7 @@ public class CatMovement : MonoBehaviour
             
         }*/
   
-        _rb.MovePosition((_rb.position)+(transform.forward * moveDistance));// (1-Input.GetAxis("Horizontal")));//(Input.GetAxis("Horizontal") * speed * Time.deltaTime));
+        _rb.MovePosition((_rb.position)+(_transform.forward * moveDistance));// (1-Input.GetAxis("Horizontal")));//(Input.GetAxis("Horizontal") * speed * Time.deltaTime));
         _rb.MoveRotation(_rb.rotation * deltaRotation);
         //END NEW code
 
