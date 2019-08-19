@@ -9,19 +9,39 @@ public class CatMovement : MonoBehaviour
     private bool _isJumping;
     private bool _isFalling;
 
+    [SerializeField] public float movementSpeed = 5.0f;
+    [SerializeField] public float sprintSpeed = 10.0f;
+    [SerializeField] public float rotationSpeed = 200.0f;
+    [SerializeField] public float jumpSpeed = 6.0f;
+    [SerializeField] private GameObject _firePrefab = null;
+    [SerializeField] private float _fireRate = 2.0f;
+    [SerializeField] private float _fireLife = 2.0f;
+    private float _nextFire;
+
     public void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _isJumping = false;
         _isFalling = false;
+        catAnimator = GetComponent<Animator>();
     }
 
-    [SerializeField] public float movementSpeed = 5.0f;
-    [SerializeField] public float sprintSpeed = 10.0f;
-    [SerializeField] public float rotationSpeed = 200.0f;
-    [SerializeField] public float jumpSpeed = 6.0f;
+    private void HandleFlames()
+    {
+        if (Input.GetKey("f") && Time.time > _nextFire)
+        {
+            _nextFire = Time.time + _fireRate;
+            var pos = new Vector3(0, 0.5f, 0.5f);
+            var rot = Quaternion.Euler(90f, 0, 0);
+            var fire = Instantiate(_firePrefab, transform);
+            fire.transform.localRotation = rot;
+            fire.transform.localPosition = pos;
+            Destroy(fire, _fireLife);
+        }
+    }
 
     public void Update () {
+        HandleFlames();
         var speed = movementSpeed;
         if (Input.GetKey("left shift") || Input.GetKey("right shift"))
         {
@@ -55,16 +75,11 @@ public class CatMovement : MonoBehaviour
             moveDistance = Input.GetAxis("Vertical")*Time.deltaTime*speed*50;
             
         }*/
-        
-        
-            
+  
         _rb.MovePosition((_rb.position)+(transform.forward * moveDistance));// (1-Input.GetAxis("Horizontal")));//(Input.GetAxis("Horizontal") * speed * Time.deltaTime));
         _rb.MoveRotation(_rb.rotation * deltaRotation);
         //END NEW code
 
-        
-
-        catAnimator = GetComponent<Animator>();
         catAnimator.SetFloat("MoveX", Input.GetAxis("Horizontal"));
         catAnimator.SetFloat("MoveY", Input.GetAxis("Vertical"));
         //Vertical is actually just the speed, so set Animator Speed directly to Vertical
