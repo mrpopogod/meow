@@ -4,23 +4,36 @@ using UnityEngine;
 
 public class TreeBurn : MonoBehaviour
 {
-    [SerializeField] private GameObject _stump;
+    [SerializeField] private GameObject stump;
+    [SerializeField] private int numFramesRequired;
+    private List<ParticleCollisionEvent> collisionEvents;
+    private int flamesReceived = 0;
 
-    public void Update()
+    void Start()
     {
-        if (Input.GetButton("Fire1"))
+        collisionEvents = new List<ParticleCollisionEvent>();
+    }
+
+    public void OnParticleCollision(GameObject other)
+    {
+        var ps = other.GetComponent<ParticleSystem>();
+        ParticlePhysicsExtensions.GetCollisionEvents(ps, gameObject, collisionEvents);
+        for (int i = 0; i < collisionEvents.Count; i++)
         {
-            Burn();
+            flamesReceived++;
+            if (flamesReceived > numFramesRequired)
+            {
+                Burn();
+                break;
+            }
         }
     }
 
-    // TODO: This should be triggered; can be a received event or an OnTriggerEntered with our fire power
     public void Burn()
     {
-        // TODO: a particle
         var newPosition = gameObject.transform.position;
         newPosition.y -= 1.7f;
-        Instantiate(_stump, newPosition, gameObject.transform.rotation);
+        Instantiate(stump, newPosition, gameObject.transform.rotation);
         Destroy(gameObject);
     }
 }
