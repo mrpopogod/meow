@@ -12,7 +12,7 @@ public class Cat : MonoBehaviour
         movement = new CatMovement(GetComponent<Rigidbody>(), GetComponent<Animator>(), GetComponent<Transform>(), firePrefab);
         progress.ChangeState(new InitialState());
     }
-
+    
   // Update is called once per frame
     void Update()
     {
