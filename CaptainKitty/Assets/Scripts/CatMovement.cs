@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CatMovement : MonoBehaviour
+public class CatMovement
 {
 
     Animator catAnimator; 
@@ -8,18 +8,21 @@ public class CatMovement : MonoBehaviour
     private Rigidbody _rb;
     private bool _isJumping;
     private bool _isFalling;
+    Transform _transform;
 
-    public void Start()
+    public CatMovement(Rigidbody rb, Animator animator, Transform transform)
     {
-        _rb = GetComponent<Rigidbody>();
+        _rb = rb;
+        catAnimator = animator;
         _isJumping = false;
         _isFalling = false;
+        _transform = transform;
     }
 
-    [SerializeField] public float movementSpeed = 5.0f;
-    [SerializeField] public float sprintSpeed = 10.0f;
-    [SerializeField] public float rotationSpeed = 200.0f;
-    [SerializeField] public float jumpSpeed = 6.0f;
+    private float movementSpeed = 5.0f;
+    private float sprintSpeed = 10.0f;
+    private float rotationSpeed = 200.0f;
+    private float jumpSpeed = 6.0f;
 
     public void Update () {
         var speed = movementSpeed;
@@ -58,13 +61,12 @@ public class CatMovement : MonoBehaviour
         
         
             
-        _rb.MovePosition((_rb.position)+(transform.forward * moveDistance));// (1-Input.GetAxis("Horizontal")));//(Input.GetAxis("Horizontal") * speed * Time.deltaTime));
+        _rb.MovePosition((_rb.position)+(_transform.forward * moveDistance));// (1-Input.GetAxis("Horizontal")));//(Input.GetAxis("Horizontal") * speed * Time.deltaTime));
         _rb.MoveRotation(_rb.rotation * deltaRotation);
         //END NEW code
 
         
 
-        catAnimator = GetComponent<Animator>();
         catAnimator.SetFloat("MoveX", Input.GetAxis("Horizontal"));
         catAnimator.SetFloat("MoveY", Input.GetAxis("Vertical"));
         //Vertical is actually just the speed, so set Animator Speed directly to Vertical

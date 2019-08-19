@@ -2,20 +2,20 @@
 
 public class Cat : MonoBehaviour
 {
-  [SerializeField] CatMovement movement;
-  private GameProgress progress = new GameProgress();
+    private CatMovement movement;
+    private GameProgress progress = new GameProgress();
 
   // Use this for initialization
-  void Start()
-  {
-    movement = gameObject.AddComponent<CatMovement>();
-    progress.ChangeState(new InitialState());
-  }
+    void Start()
+    {
+        movement = new CatMovement(GetComponent<Rigidbody>(), GetComponent<Animator>(), GetComponent<Transform>());
+        progress.ChangeState(new InitialState());
+    }
 
   // Update is called once per frame
-  void Update()
-  {
-    movement.Update();
-    progress.RunCurrentState();
-  }
+    void Update()
+    {
+        movement.Update();
+        progress.RunCurrentState();
+    }
 }
