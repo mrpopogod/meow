@@ -106,4 +106,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stump: {fileID: 100000, guid: 4b1d409652eb77f4fa9dbe3d1360098b, type: 3}
-  numFramesRequired: 20
+  firePrefab: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
+  numFramesRequired: 30

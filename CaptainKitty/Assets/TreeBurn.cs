@@ -5,6 +5,7 @@ using UnityEngine;
 public class TreeBurn : MonoBehaviour
 {
     [SerializeField] private GameObject stump;
+    [SerializeField] private GameObject firePrefab;
     [SerializeField] private int numFramesRequired;
     private List<ParticleCollisionEvent> collisionEvents;
     private int flamesReceived = 0;
@@ -33,6 +34,8 @@ public class TreeBurn : MonoBehaviour
     {
         var newPosition = gameObject.transform.position;
         newPosition.y -= 1.7f;
+        var fire = Instantiate(firePrefab, newPosition, gameObject.transform.rotation);
+        Destroy(fire, 2.0f);
         Instantiate(stump, newPosition, gameObject.transform.rotation);
         Destroy(gameObject);
     }
