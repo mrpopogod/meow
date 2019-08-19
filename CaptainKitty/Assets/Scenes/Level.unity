@@ -12468,9 +12468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2b09d9c3733514583c8999ba00a5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  firePrefab: {fileID: 2107263177}
-=======
   firePrefab: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
 --- !u!4 &1102430442 stripped
 Transform:
@@ -12478,7 +12475,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1102430437}
   m_PrefabAsset: {fileID: 0}
->>>>>>> ad9b6fd5c4e428f766076cdfcff4b6cfed018377
 --- !u!54 &1102430443
 Rigidbody:
   m_ObjectHideFlags: 0
