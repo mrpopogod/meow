@@ -1,21 +1,13 @@
-﻿public class GameProgress
+﻿using System;
+
+public sealed class GameProgress
 {
     private IState currentState;
     private IState previousState;
 
-    private GameProgress _instance;
+    private static readonly Lazy<GameProgress> _instance = new Lazy<GameProgress>(() => new GameProgress());
 
-    public GameProgress Progress
-    {
-        get
-        {
-            if(_instance == null)
-            {
-                _instance = new GameProgress();
-            }
-            return _instance;
-        }
-    }
+    public static GameProgress Progress { get { return _instance.Value; } }
 
     public void ChangeState (IState newState)
     {
