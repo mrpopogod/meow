@@ -11,8 +11,8 @@ public class CatMovement
     Transform _transform;
 
     private GameObject _firePrefab = null;
-    private float _fireRate = 2.0f;
-    private float _fireLife = 2.0f;
+    private float _fireRate = 1.5f;
+    private float _fireLife = 1.0f;
     private float movementSpeed = 5.0f;
     private float sprintSpeed = 10.0f;
     private float rotationSpeed = 200.0f;
