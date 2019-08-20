@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Ravine.unity
+    path: Assets/Scenes/Gorge.unity
     guid: 5f987c4557c847f4dabc00ed5becefbe
   - enabled: 1
     path: Assets/Scenes/Prefab Staging.unity
