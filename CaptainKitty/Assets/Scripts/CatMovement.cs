@@ -57,29 +57,6 @@ public class CatMovement
             _wind = GameObject.Instantiate(_windPrefab, _transform);
             _wind.transform.localRotation = rot;
             _wind.transform.localPosition = pos;
-            Vector3 position = this._transform.position;
-            position.y += 0.5f;
-            float distanceToBlow = 5.0f;
-            Vector3 rotation = this._transform.TransformDirection(Vector3.forward)*distanceToBlow;// * 10.0f;//this._transform.rotation.eulerAngles;
-
-            //check if there is a BlowableInteractable within X distance (along the ray-traced direction)
-
-            RaycastHit[] hits = Physics.RaycastAll(position, rotation, 5.0f);//_rb.position + this._transform.forward * -0.1f/*+ rotation * 0.1f*/, rotation, 1.5f);//, LayerMask.GetMask("Puzzle"));//, false);
-            Debug.Log("Trying to blow an interactable"+hits+" "+hits.Length+" in dir: "+rotation.ToString());
-            Debug.DrawRay(position, rotation, Color.yellow, 2.0f, false);
-
-            if ((hits != null) && (hits.Length > 0))//.collider != null)
-            {
-                
-                foreach (RaycastHit target in hits)
-                {
-                    Debug.Log("Raycast has hit the object " + target.collider.gameObject);
-                    BlowableInteractable targetsInteractable = target.collider.GetComponent<BlowableInteractable>();
-                    //TODO: call those objects' functions to move them
-                    if (targetsInteractable != null) targetsInteractable.BlowWithForce(rotation);
-                }
-
-            }
         }
         else if (Input.GetKey("e") == false && _wind != null)
 		{
