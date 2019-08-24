@@ -8,6 +8,7 @@ public class CatMovement
     private Rigidbody _rb;
     private bool _isJumping;
     private bool _isFalling;
+    private bool _isActing = false;
     Transform _transform;
 
     private GameObject _firePrefab = null;
@@ -21,6 +22,7 @@ public class CatMovement
 
 	private GameObject _windPrefab = null;
 	private GameObject _wind = null;
+    
 
     public CatMovement(Rigidbody rb, Animator animator, Transform transform, GameObject firePrefab, GameObject windPrefab)
     {
@@ -45,6 +47,15 @@ public class CatMovement
             fire.transform.localPosition = pos;
             GameObject.Destroy(fire, _fireLife);
 
+            catAnimator.SetBool("Meow", true);
+            _isActing = true;
+        }
+        else if (Input.GetKey("f") == false && Time.time > _nextFire)
+        {
+            //GameObject.Destroy(_wind);
+            //_wind = null;
+            catAnimator.SetBool("Meow", false);
+            _isActing = false;
         }
     }
     private void Blow()
@@ -73,6 +84,8 @@ public class CatMovement
             }
 
         }
+        catAnimator.SetBool("Meow", true);
+        _isActing = true;
     }
     private void HandleWind()
     {
@@ -89,7 +102,9 @@ public class CatMovement
 		{
 			GameObject.Destroy(_wind);
 			_wind = null;
-		}
+            catAnimator.SetBool("Meow", false);
+            _isActing = false;
+        }
 
         if (_wind != null)
         {
@@ -104,6 +119,11 @@ public class CatMovement
         if (Input.GetKey("left shift") || Input.GetKey("right shift"))
         {
           speed = sprintSpeed;
+        }
+
+        if (_isActing == true)
+        {
+            speed = 0f;
         }
         
         
@@ -139,7 +159,7 @@ public class CatMovement
             _isFalling = true;
         }
 
-        if (Mathf.Abs(_rb.velocity.y) < 0.1 && _isFalling)
+        if (Mathf.Abs(_rb.velocity.y) < 0.01 && _isFalling)
         {
             _isFalling = false;
             _isJumping = false;
