@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 529239097d02f9f42b0ddd436c6fcbb0
+=======
+guid: abdc88d2549b10842b6d2e0fa74b6b28
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -27,16 +31,27 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
+<<<<<<< HEAD
   textureFormat: -1
   maxTextureSize: 256
+=======
+  textureFormat: 1
+  maxTextureSize: 2048
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   textureSettings:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
     mipBias: -100
+<<<<<<< HEAD
     wrapU: 0
     wrapV: 0
     wrapW: 0
+=======
+    wrapU: -1
+    wrapV: -1
+    wrapW: -1
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
@@ -60,7 +75,11 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
+<<<<<<< HEAD
     maxTextureSize: 256
+=======
+    maxTextureSize: 2048
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -83,8 +102,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
   spritePackingTag: 
+<<<<<<< HEAD
   pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
+=======
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ba6a41dc489914734857bb5924eb70ad
 ModelImporter:
   serializedVersion: 25
@@ -43,6 +44,20 @@ ModelImporter:
     materialLocation: 0
   animations:
     legacyGenerateAnimations: 0
+=======
+guid: 54dd37797daf4d84088cdc4dd08d6d2b
+ModelImporter:
+  serializedVersion: 25
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
@@ -63,13 +78,18 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
+<<<<<<< HEAD
     isReadable: 1
+=======
+    isReadable: 0
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+<<<<<<< HEAD
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
@@ -77,6 +97,15 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 0
+=======
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
@@ -84,6 +113,7 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
+<<<<<<< HEAD
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15
@@ -96,6 +126,20 @@ ModelImporter:
     tangentImportMode: 1
     normalCalculationMode: 0
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+=======
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
@@ -116,11 +160,19 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
+<<<<<<< HEAD
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 1
   humanoidOversampling: 1
   additionalBone: 1
+=======
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   userData: 
   assetBundleName: 
   assetBundleVariant: 

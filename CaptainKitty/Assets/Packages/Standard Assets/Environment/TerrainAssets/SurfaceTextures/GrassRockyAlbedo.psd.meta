@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 440eb36db91ca410f800ff3cfe43572f
+=======
+guid: 0996df0a1c947b648ad72307b446da69
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -13,7 +17,11 @@ TextureImporter:
     borderMipMap: 0
     mipMapsPreserveCoverage: 0
     alphaTestReferenceValue: 0.5
+<<<<<<< HEAD
     mipMapFadeDistanceStart: 2
+=======
+    mipMapFadeDistanceStart: 1
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
@@ -27,6 +35,7 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
+<<<<<<< HEAD
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
@@ -37,6 +46,18 @@ TextureImporter:
     wrapU: 0
     wrapV: 0
     wrapW: 0
+=======
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: -1
+    wrapV: -1
+    wrapW: -1
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
@@ -60,7 +81,11 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
+<<<<<<< HEAD
     maxTextureSize: 1024
+=======
+    maxTextureSize: 2048
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -69,6 +94,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: iPhone
     maxTextureSize: 256
@@ -113,6 +139,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 1
     androidETC2FallbackOverride: 0
+=======
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   spriteSheet:
     serializedVersion: 2
     sprites: []
@@ -127,8 +155,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
   spritePackingTag: 
+<<<<<<< HEAD
   pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
+=======
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   userData: 
   assetBundleName: 
   assetBundleVariant: 

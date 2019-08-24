@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 17da6d53ec93a0444bd0f751b1d02477
+=======
+guid: 00d8bab26cbfc654dae40f42940974fc
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -23,12 +27,20 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+<<<<<<< HEAD
   grayScaleToAlpha: 1
+=======
+  grayScaleToAlpha: 0
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
   textureFormat: 1
+<<<<<<< HEAD
   maxTextureSize: 1024
+=======
+  maxTextureSize: 2048
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   textureSettings:
     serializedVersion: 2
     filterMode: -1
@@ -48,10 +60,17 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
+<<<<<<< HEAD
   alphaUsage: 2
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 10
+=======
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -60,15 +79,23 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
+<<<<<<< HEAD
     maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
+=======
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: iPhone
     maxTextureSize: 256
@@ -113,6 +140,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 1
     androidETC2FallbackOverride: 0
+=======
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   spriteSheet:
     serializedVersion: 2
     sprites: []

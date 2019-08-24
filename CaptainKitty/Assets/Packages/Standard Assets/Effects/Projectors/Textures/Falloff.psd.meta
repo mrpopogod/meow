@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 23740055e2b119e40a939138ab8070f8
+=======
+guid: 2461665d5303af44f8276018b8bf537a
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -10,7 +14,11 @@ TextureImporter:
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
+<<<<<<< HEAD
     borderMipMap: 1
+=======
+    borderMipMap: 0
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
     mipMapsPreserveCoverage: 0
     alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
@@ -23,20 +31,34 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+<<<<<<< HEAD
   grayScaleToAlpha: 1
+=======
+  grayScaleToAlpha: 0
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
   textureFormat: 1
+<<<<<<< HEAD
   maxTextureSize: 256
+=======
+  maxTextureSize: 2048
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   textureSettings:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
     mipBias: -100
+<<<<<<< HEAD
     wrapU: 1
     wrapV: 1
     wrapW: 1
+=======
+    wrapU: -1
+    wrapV: -1
+    wrapW: -1
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
@@ -48,10 +70,17 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
+<<<<<<< HEAD
   alphaUsage: 2
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 10
+=======
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -60,10 +89,17 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
+<<<<<<< HEAD
     maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
+=======
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -83,8 +119,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
   spritePackingTag: 
+<<<<<<< HEAD
   pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
+=======
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+>>>>>>> 85425fac26116b555f36c493d9d47a211224c628
   userData: 
   assetBundleName: 
   assetBundleVariant: 
