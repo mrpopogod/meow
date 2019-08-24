@@ -10,6 +10,8 @@ public class Cat : MonoBehaviour
     private bool inRiver = false;
     private bool inGorge = false;
 
+    private int progress = 0;
+
     // Use this for initialization
     void Start()
     {
@@ -26,6 +28,10 @@ public class Cat : MonoBehaviour
     public void EnteredDesert()
     {
         inDesert = true;
+        if (progress == 1)
+        {
+            progress = 2;
+        }
     }
 
     public void LeftDesert()
@@ -36,6 +42,10 @@ public class Cat : MonoBehaviour
     public void EnteredForest()
     {
         inForest = true;
+        if (progress == 2)
+        {
+            progress = 3;
+        }
     }
 
     public void LeftForest()
@@ -46,6 +56,11 @@ public class Cat : MonoBehaviour
     public void EnteredGorge()
     {
         inGorge = true;
+        if (progress == 3)
+        {
+            progress = 4;
+            Debug.Log("A winner is you!");
+        }
     }
 
     public void LeftGorge()
@@ -56,6 +71,10 @@ public class Cat : MonoBehaviour
     public void EnteredRiver()
     {
         inRiver = true;
+        if (progress == 0)
+        {
+            progress = 1;
+        }
     }
 
     public void LeftRiver()
