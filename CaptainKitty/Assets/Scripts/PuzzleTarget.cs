@@ -11,7 +11,8 @@ public class PuzzleTarget : MonoBehaviour
         {
 
             other.transform.position = this.transform.position;
-            other.attachedRigidbody.mass = 1000; //TODO: there's probably a better way to lock the piece
+            //other.attachedRigidbody.mass = 1000; //TODO: there's probably a better way to lock the piece
+			other.attachedRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
 
             Cat theCat = FindObjectOfType<Cat>();
 
