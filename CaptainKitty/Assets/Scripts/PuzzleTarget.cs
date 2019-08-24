@@ -9,8 +9,10 @@ public class PuzzleTarget : MonoBehaviour
 
         if (other.gameObject == piece)
         {
-
-            other.transform.position = this.transform.position;
+            var pos = other.transform.position;
+            pos.x = this.transform.position.x;
+            pos.z = this.transform.position.z;
+            other.transform.position = pos;
             //other.attachedRigidbody.mass = 1000; //TODO: there's probably a better way to lock the piece
 			other.attachedRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
 
