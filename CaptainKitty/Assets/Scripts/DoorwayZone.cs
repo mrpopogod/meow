@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DoorwayZone : MonoBehaviour
 {
@@ -14,7 +11,7 @@ public class DoorwayZone : MonoBehaviour
         boundary = zoneBoundary.GetComponent<ZoneBoundary>();
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerExit(Collider other)
       {
           Debug.Log($"{other.name} has crossed the {this.boundary.Name} doorway");
           if (other != null)
