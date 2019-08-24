@@ -14,6 +14,7 @@ public class PuzzleTarget : MonoBehaviour
             other.attachedRigidbody.mass = 1000; //TODO: there's probably a better way to lock the piece
 
             Cat theCat = FindObjectOfType<Cat>();
+            
 
             if (theCat != null)
             {
