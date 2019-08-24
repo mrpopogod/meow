@@ -3395,7 +3395,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102333509}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -0.0060912105, z: -1.3525204e-18}
+  m_LocalPosition: {x: 0, y: -0.0060912105, z: 0}
   m_LocalScale: {x: 1.9564531, y: 1.9564531, z: 1.9564531}
   m_Children: []
   m_Father: {fileID: 1102305869}
@@ -12934,6 +12934,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
   windPrefab: {fileID: 100000, guid: 5a97962f7d5ba4df0823334b52c7c02c, type: 3}
+  canFire: 0
+  canWind: 0
+  canWater: 0
+  catObject: {fileID: 1102333509}
+  myMesh: {fileID: 0}
+  BaseSkin: {fileID: 2100000, guid: 27ec793d5e225144dbed106b3b69483a, type: 2}
+  WaterSkin: {fileID: 2100000, guid: 9e844de11f0439b49af02be18f0f990e, type: 2}
+  FireSkin: {fileID: 2100000, guid: 9a33182b4e35aa74998d58d2bf73fb4e, type: 2}
+  WindSkin: {fileID: 2100000, guid: a9cfd6762169792418e92ad839f44ca0, type: 2}
 --- !u!4 &1102430442
 Transform:
   m_ObjectHideFlags: 0

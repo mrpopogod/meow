@@ -19,6 +19,7 @@ public class CatMovement
     private float rotationSpeed = 200.0f;
     private float jumpSpeed = 6.0f;
     private float _nextFire;
+    
 
 	private GameObject _windPrefab = null;
 	private GameObject _wind = null;
