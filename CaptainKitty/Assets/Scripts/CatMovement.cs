@@ -138,7 +138,7 @@ public class CatMovement
             _isFalling = true;
         }
 
-        if (Mathf.Abs(_rb.velocity.y) < 0.1 && _isFalling)
+        if (Mathf.Abs(_rb.velocity.y) < 0.01 && _isFalling)
         {
             _isFalling = false;
             _isJumping = false;
