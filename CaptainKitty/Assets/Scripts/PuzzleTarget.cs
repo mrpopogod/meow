@@ -15,6 +15,7 @@ public class PuzzleTarget : MonoBehaviour
 			other.attachedRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
 
             Cat theCat = FindObjectOfType<Cat>();
+            
 
             if (theCat != null)
             {

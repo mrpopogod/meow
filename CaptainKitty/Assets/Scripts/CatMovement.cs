@@ -44,6 +44,7 @@ public class CatMovement
             fire.transform.localRotation = rot;
             fire.transform.localPosition = pos;
             GameObject.Destroy(fire, _fireLife);
+
         }
     }
 
@@ -56,12 +57,62 @@ public class CatMovement
             _wind = GameObject.Instantiate(_windPrefab, _transform);
             _wind.transform.localRotation = rot;
             _wind.transform.localPosition = pos;
+            Vector3 position = this._transform.position;
+            position.y += 0.5f;
+            float distanceToBlow = 5.0f;
+            Vector3 rotation = this._transform.TransformDirection(Vector3.forward)*distanceToBlow;// * 10.0f;//this._transform.rotation.eulerAngles;
+
+            //check if there is a BlowableInteractable within X distance (along the ray-traced direction)
+
+            RaycastHit[] hits = Physics.RaycastAll(position, rotation, 5.0f);//_rb.position + this._transform.forward * -0.1f/*+ rotation * 0.1f*/, rotation, 1.5f);//, LayerMask.GetMask("Puzzle"));//, false);
+            Debug.Log("Trying to blow an interactable"+hits+" "+hits.Length+" in dir: "+rotation.ToString());
+            Debug.DrawRay(position, rotation, Color.yellow, 2.0f, false);
+
+            if ((hits != null) && (hits.Length > 0))//.collider != null)
+            {
+                
+                foreach (RaycastHit target in hits)
+                {
+                    Debug.Log("Raycast has hit the object " + target.collider.gameObject);
+                    BlowableInteractable targetsInteractable = target.collider.GetComponent<BlowableInteractable>();
+                    //TODO: call those objects' functions to move them
+                    if (targetsInteractable != null) targetsInteractable.BlowWithForce(rotation);
+                }
+
+            }
         }
-		else if (Input.GetKey("e") == false && _wind != null)
+        else if (Input.GetKey("e") == false && _wind != null)
 		{
 			GameObject.Destroy(_wind);
 			_wind = null;
 		}
+
+        if (_wind != null)
+        {
+            Vector3 position = this._transform.position;
+            position.y += 0.5f;
+            float distanceToBlow = 5.0f;
+            Vector3 rotation = this._transform.TransformDirection(Vector3.forward) * distanceToBlow;// * 10.0f;//this._transform.rotation.eulerAngles;
+
+            //check if there is a BlowableInteractable within X distance (along the ray-traced direction)
+
+            RaycastHit[] hits = Physics.RaycastAll(position, rotation, 5.0f);//_rb.position + this._transform.forward * -0.1f/*+ rotation * 0.1f*/, rotation, 1.5f);//, LayerMask.GetMask("Puzzle"));//, false);
+            Debug.Log("Trying to blow an interactable" + hits + " " + hits.Length + " in dir: " + rotation.ToString());
+            Debug.DrawRay(position, rotation, Color.yellow, 2.0f, false);
+
+            if ((hits != null) && (hits.Length > 0))//.collider != null)
+            {
+
+                foreach (RaycastHit target in hits)
+                {
+                    Debug.Log("Raycast has hit the object " + target.collider.gameObject);
+                    BlowableInteractable targetsInteractable = target.collider.GetComponent<BlowableInteractable>();
+                    //TODO: call those objects' functions to move them
+                    if (targetsInteractable != null) targetsInteractable.BlowWithForce(rotation);
+                }
+
+            }
+        }
     }
 
     public void Update () {
@@ -72,9 +123,7 @@ public class CatMovement
         {
           speed = sprintSpeed;
         }
-
-        //transform.Rotate(0, Input.GetAxis("Horizontal") * Time.deltaTime * rotationSpeed, 0);
-        //transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * speed);
+        
         
         //NEW code
         float horizontal = Input.GetAxis("Horizontal"); //how much the cat should turn local left or right
@@ -83,24 +132,9 @@ public class CatMovement
         Quaternion deltaRotation = Quaternion.Euler(rotationVector * Time.deltaTime);//new Quaternion(0f, Input.GetAxis("Horizontal") * Time.deltaTime * rotationSpeed, 0f, 1f);
 
         Vector3 position = _rb.position;
-
-        //position.Scale = position.magnitude + 3.0f * vertical * Time.deltaTime * speed;
-        //position.x = position.x + 3.0f * vertical * Time.deltaTime * speed;
-        //position.y = position.y + 3.0f * vertical * Time.deltaTime * speed;
-
-        //Move forward in the translate direction
-        //if (Input.GetAxis("Horizontal"))
+        
         float moveDistance = Input.GetAxis("Vertical") * Time.deltaTime * speed;
-        //Vector3 rotation = transform.forward;//new Vector3(_rb.rotation.y, 0, 0);
-
-
-        /*if (Input.GetAxis("Vertical") != 0)
-        {
-            //Debug.Log("Moving at speed: " + Input.GetAxis("Vertical")*Time.deltaTime*speed);
-            moveDistance = Input.GetAxis("Vertical")*Time.deltaTime*speed*50;
-            
-        }*/
-  
+       
         _rb.MovePosition((_rb.position)+(_transform.forward * moveDistance));// (1-Input.GetAxis("Horizontal")));//(Input.GetAxis("Horizontal") * speed * Time.deltaTime));
         _rb.MoveRotation(_rb.rotation * deltaRotation);
         //END NEW code
