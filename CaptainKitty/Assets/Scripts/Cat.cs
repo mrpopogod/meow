@@ -5,6 +5,10 @@ public class Cat : MonoBehaviour
     private CatMovement movement;
     public GameObject firePrefab;
 	public GameObject windPrefab;
+    private bool inDesert = false;
+    private bool inForest = false;
+    private bool inRiver = false;
+    private bool inGorge = false;
 
     // Use this for initialization
     void Start()
@@ -17,5 +21,45 @@ public class Cat : MonoBehaviour
     {
         movement.Update();
         GameProgress.Progress.RunCurrentState();
+    }
+
+    public void EnteredDesert()
+    {
+        inDesert = true;
+    }
+
+    public void LeftDesert()
+    {
+        inDesert = false;
+    }
+
+    public void EnteredForest()
+    {
+        inForest = true;
+    }
+
+    public void LeftForest()
+    {
+        inForest = false;
+    }
+
+    public void EnteredGorge()
+    {
+        inGorge = true;
+    }
+
+    public void LeftGorge()
+    {
+        inGorge = false;
+    }
+
+    public void EnteredRiver()
+    {
+        inRiver = true;
+    }
+
+    public void LeftRiver()
+    {
+        inRiver = false;
     }
 }
