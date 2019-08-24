@@ -12903,7 +12903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
-  windPrefab: {fileID: 0}
+  windPrefab: {fileID: 100000, guid: 5a97962f7d5ba4df0823334b52c7c02c, type: 3}
 --- !u!4 &1102430442
 Transform:
   m_ObjectHideFlags: 0
