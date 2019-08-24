@@ -19,7 +19,10 @@ public class CatMovement
     private float jumpSpeed = 6.0f;
     private float _nextFire;
 
-    public CatMovement(Rigidbody rb, Animator animator, Transform transform, GameObject firePrefab)
+	private GameObject _windPrefab = null;
+	private GameObject _wind = null;
+
+    public CatMovement(Rigidbody rb, Animator animator, Transform transform, GameObject firePrefab, GameObject windPrefab)
     {
         _rb = rb;
         catAnimator = animator;
@@ -27,6 +30,7 @@ public class CatMovement
         _isFalling = false;
         _transform = transform;
         _firePrefab = firePrefab;
+		_windPrefab = windPrefab;
     }
 
     private void HandleFlames()
@@ -45,10 +49,19 @@ public class CatMovement
 
     private void HandleWind()
     {
-        if (Input.GetKey("e") && Time.time > _nextFire)
+        if (Input.GetKey("e") == true && _wind == null)
         {
-            _nextFire = Time.time + _fireRate;
+			var pos = new Vector3(0, 0.5f, 0.5f);
+            var rot = Quaternion.Euler(0f, 0, 0);
+            _wind = GameObject.Instantiate(_windPrefab, _transform);
+            _wind.transform.localRotation = rot;
+            _wind.transform.localPosition = pos;
         }
+		else if (Input.GetKey("e") == false && _wind != null)
+		{
+			GameObject.Destroy(_wind);
+			_wind = null;
+		}
     }
 
     public void Update () {
