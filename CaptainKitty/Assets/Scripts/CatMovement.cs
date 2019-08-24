@@ -83,7 +83,6 @@ public class CatMovement
             _wind = GameObject.Instantiate(_windPrefab, _transform);
             _wind.transform.localRotation = rot;
             _wind.transform.localPosition = pos;
-            Blow();
         }
         else if (Input.GetKey("e") == false && _wind != null)
 		{
