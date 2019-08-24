@@ -17,6 +17,11 @@ public class TreeBurn : MonoBehaviour
 
     public void OnParticleCollision(GameObject other)
     {
+        if (!other.tag.Equals("Fire"))
+        {
+            return;
+        }
+
         var ps = other.GetComponent<ParticleSystem>();
         ParticlePhysicsExtensions.GetCollisionEvents(ps, gameObject, collisionEvents);
         for (int i = 0; i < collisionEvents.Count; i++)
