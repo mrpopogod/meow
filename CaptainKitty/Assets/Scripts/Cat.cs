@@ -9,6 +9,9 @@ public class Cat : MonoBehaviour
     private bool inForest = false;
     private bool inRiver = false;
     private bool inGorge = false;
+
+    private bool inWater = false;
+
     public bool canFire = false;
     public bool canWind = false;
     public bool canWater = false;
@@ -18,6 +21,7 @@ public class Cat : MonoBehaviour
     public Material WaterSkin = null;
     public Material FireSkin = null;
     public Material WindSkin = null;
+
 
     private int progress = 0;
     public void ChangeSkin (int newNumber)
@@ -129,5 +133,17 @@ public class Cat : MonoBehaviour
     public void LeftRiver()
     {
         inRiver = false;
+    }
+
+    public void EnteredWater()
+    {
+        inWater = true;
+        movement.inWater = inWater;
+    }
+
+    public void LeftWater()
+    {
+        inWater = false;
+        movement.inWater = inWater;
     }
 }
