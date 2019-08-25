@@ -99,7 +99,7 @@ public class Cat : MonoBehaviour
             //Texture myTexture = null;
             //catObject.renderer.material.SetTexture();
 
-            LevelUp();
+            //LevelUp();
             //mats[0] = headMat;
             //skeleton.materials = mats;
         }
@@ -118,7 +118,7 @@ public class Cat : MonoBehaviour
             Debug.Log("Cat entered the Forest correctly.");
             //progress = 3;
             //canWind = true;
-            LevelUp();
+            //LevelUp();
             //ChangeSkin(3);
         }
     }
@@ -134,7 +134,7 @@ public class Cat : MonoBehaviour
         if (progress == 3)
         {
             //progress = 4;
-            LevelUp();
+            //LevelUp();
             Debug.Log("A winner is you!");
         }
     }
