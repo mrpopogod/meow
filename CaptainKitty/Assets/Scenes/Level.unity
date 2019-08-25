@@ -3159,6 +3159,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e8e92a1625b49443a0fdec51db08694, type: 3}
+--- !u!1 &163914798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6829699588120722261, guid: ccc9be28a7eb1bf43976cc7da0152eba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1008601654}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &164486195
 GameObject:
   m_ObjectHideFlags: 0
@@ -15427,6 +15433,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6663243192554062736, guid: ccc9be28a7eb1bf43976cc7da0152eba,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccc9be28a7eb1bf43976cc7da0152eba, type: 3}
 --- !u!1 &1010911667
@@ -27104,6 +27115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
   windPrefab: {fileID: 100000, guid: 5a97962f7d5ba4df0823334b52c7c02c, type: 3}
+  fireCylinder: {fileID: 163914798}
   catObject: {fileID: 1102333509}
   myMesh: {fileID: 0}
   BaseSkin: {fileID: 2100000, guid: 27ec793d5e225144dbed106b3b69483a, type: 2}

@@ -9,10 +9,11 @@ public class Cat : MonoBehaviour
     private bool inForest = false;
     private bool inRiver = false;
     private bool inGorge = false;
+    private bool hasWater = false;
 
     private bool inWater = false;
 
-
+    public GameObject fireCylinder = null;
     public GameObject catObject = null;
     public SkinnedMeshRenderer myMesh = null;
     public Material BaseSkin = null;
@@ -31,7 +32,8 @@ public class Cat : MonoBehaviour
 
         if (progress > 0)
         {
-
+            GameObject.Destroy(fireCylinder);
+            hasWater = true;
             movement.UnlockWater();
         }
         if (progress > 1)
@@ -44,6 +46,20 @@ public class Cat : MonoBehaviour
         }
 
 
+    }
+
+    public void OnParticleCollision(GameObject other)
+    {
+        if (!hasWater)
+        {
+            return;
+        }
+
+        if (other.tag.Equals("DesertFire"))
+        {
+            var ps = other.GetComponent<ParticleSystem>();
+            GameObject.Destroy(ps);
+        }
     }
 
     public void ChangeSkin (int newNumber)
