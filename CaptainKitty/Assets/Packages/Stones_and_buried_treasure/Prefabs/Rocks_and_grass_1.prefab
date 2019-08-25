@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4463400019329302}
   - component: {fileID: 33066078148453976}
   - component: {fileID: 23452034491229892}
+  - component: {fileID: 5211576653897682638}
   m_Layer: 0
   m_Name: Rocks_and_grass_1
   m_TagString: Untagged
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &5211576653897682638
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546409929560646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300056, guid: 5f3a7deba91ee3341b2266db1be8c0a0, type: 3}
