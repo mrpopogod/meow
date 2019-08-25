@@ -37,6 +37,7 @@ public class CatMovement
 
     private void HandleFlames()
     {
+        
         if (Input.GetKey("f") && Time.time > _nextFire)
         {
             _nextFire = Time.time + _fireRate;
