@@ -20,7 +20,11 @@ public class CatMovement
     private float jumpSpeed = 6.0f;
     private float _nextFire;
 
-	private GameObject _windPrefab = null;
+    public bool canFire = false;
+    public bool canWind = false;
+    public bool canWater = false;
+
+    private GameObject _windPrefab = null;
 	private GameObject _wind = null;
 
     public bool inWater { get; set; }
@@ -37,32 +41,55 @@ public class CatMovement
 		_windPrefab = windPrefab;
     }
 
+    public void UnlockWater()
+    {
+        canWater = true;
+        //TODO: Play a sound!
+        //TODO: Open a dialog
+    }
+
+    public void UnlockFire()
+    {
+        canFire = true;
+        //TODO: Play a sound!
+        //TODO: Open a dialog
+    }
+    public void UnlockWind()
+    {
+        canWind = true;
+        //TODO: Play a sound!
+        //TODO: Open a dialog
+    }
+
     private void HandleFlames()
     {
-        
-        if (Input.GetKey("f") && Time.time > _nextFire)
+        if (canFire)
         {
-            _nextFire = Time.time + _fireRate;
-            var pos = new Vector3(0, 0.5f, 0.5f);
-            var rot = Quaternion.Euler(90f, 0, 0);
-            var fire = GameObject.Instantiate(_firePrefab, _transform);
-            fire.transform.localRotation = rot;
-            fire.transform.localPosition = pos;
-            GameObject.Destroy(fire, _fireLife);
+            if (Input.GetKey("f") && Time.time > _nextFire)
+            {
+                _nextFire = Time.time + _fireRate;
+                var pos = new Vector3(0, 0.5f, 0.5f);
+                var rot = Quaternion.Euler(90f, 0, 0);
+                var fire = GameObject.Instantiate(_firePrefab, _transform);
+                fire.transform.localRotation = rot;
+                fire.transform.localPosition = pos;
+                GameObject.Destroy(fire, _fireLife);
 
-            catAnimator.SetBool("Meow", true);
-            _isActing = true;
-        }
-        else if (Input.GetKey("f") == false && Time.time > _nextFire)
-        {
-            //GameObject.Destroy(_wind);
-            //_wind = null;
-            catAnimator.SetBool("Meow", false);
-            _isActing = false;
+                catAnimator.SetBool("Meow", true);
+                _isActing = true;
+            }
+            else if (Input.GetKey("f") == false && Time.time > _nextFire)
+            {
+                //GameObject.Destroy(_wind);
+                //_wind = null;
+                catAnimator.SetBool("Meow", false);
+                _isActing = false;
+            }
         }
     }
     private void Blow()
     {
+        
         Vector3 position = this._transform.position;
         position.y += 0.5f;
         float distanceToBlow = 5.0f;
@@ -92,25 +119,28 @@ public class CatMovement
     }
     private void HandleWind()
     {
-        if (Input.GetKey("e") == true && _wind == null)
+        if (canWind)
         {
-			var pos = new Vector3(0, 0.5f, 0.5f);
-            var rot = Quaternion.Euler(0f, 0, 0);
-            _wind = GameObject.Instantiate(_windPrefab, _transform);
-            _wind.transform.localRotation = rot;
-            _wind.transform.localPosition = pos;
-        }
-        else if (Input.GetKey("e") == false && _wind != null)
-		{
-			GameObject.Destroy(_wind);
-			_wind = null;
-            catAnimator.SetBool("Meow", false);
-            _isActing = false;
-        }
+            if (Input.GetKey("e") == true && _wind == null)
+            {
+                var pos = new Vector3(0, 0.5f, 0.5f);
+                var rot = Quaternion.Euler(0f, 0, 0);
+                _wind = GameObject.Instantiate(_windPrefab, _transform);
+                _wind.transform.localRotation = rot;
+                _wind.transform.localPosition = pos;
+            }
+            else if (Input.GetKey("e") == false && _wind != null)
+            {
+                GameObject.Destroy(_wind);
+                _wind = null;
+                catAnimator.SetBool("Meow", false);
+                _isActing = false;
+            }
 
-        if (_wind != null)
-        {
-            Blow();
+            if (_wind != null)
+            {
+                Blow();
+            }
         }
     }
 

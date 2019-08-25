@@ -12,9 +12,7 @@ public class Cat : MonoBehaviour
 
     private bool inWater = false;
 
-    public bool canFire = false;
-    public bool canWind = false;
-    public bool canWater = false;
+
     public GameObject catObject = null;
     public SkinnedMeshRenderer myMesh = null;
     public Material BaseSkin = null;
@@ -69,12 +67,13 @@ public class Cat : MonoBehaviour
         {
             Debug.Log("Cat entered the Desert correctly.");
             progress = 2;
-            canFire = true;
+            //canFire = true;
             //Shader myShader = catObject.GetComponent<Shader>();
             //Texture myTexture = null;
             //catObject.renderer.material.SetTexture();
 
             ChangeSkin(2);
+            movement.UnlockFire();
             //mats[0] = headMat;
             //skeleton.materials = mats;
         }
@@ -92,7 +91,8 @@ public class Cat : MonoBehaviour
         {
             Debug.Log("Cat entered the Forest correctly.");
             progress = 3;
-            canWind = true;
+            //canWind = true;
+            movement.UnlockWind();
             ChangeSkin(3);
         }
     }
@@ -124,7 +124,8 @@ public class Cat : MonoBehaviour
         {
             Debug.Log("Cat entered the river correctly.");
             progress = 1;
-            canWater = true;
+            movement.UnlockWater();
+            //canWater = true;
 
             ChangeSkin(1);
         }
@@ -146,4 +147,10 @@ public class Cat : MonoBehaviour
         inWater = false;
         movement.inWater = inWater;
     }
+	
+	public void KillPlane()
+	{
+		transform.position = new Vector3(0f, 7f, 0f);
+	}	
+	
 }
