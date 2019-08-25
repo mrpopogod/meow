@@ -22,6 +22,30 @@ public class Cat : MonoBehaviour
 
 
     private int progress = 0;
+    //public int catLevel = 0; //already captured in "progress"
+
+    public void LevelUp()
+    {
+        progress++;
+        ChangeSkin(progress);
+
+        if (progress > 0)
+        {
+
+            movement.UnlockWater();
+        }
+        if (progress > 1)
+        {
+            movement.UnlockFire();
+        }
+        if (progress > 2)
+        {
+            movement.UnlockWind();
+        }
+
+
+    }
+
     public void ChangeSkin (int newNumber)
     {
         Material[] mats = myMesh.materials;
@@ -37,6 +61,9 @@ public class Cat : MonoBehaviour
             mats[0] = FireSkin;
         }
         else if (newNumber == 3)
+        {
+            mats[0] = WindSkin;
+        } else
         {
             mats[0] = WindSkin;
         }
@@ -66,14 +93,13 @@ public class Cat : MonoBehaviour
         if (progress == 1)
         {
             Debug.Log("Cat entered the Desert correctly.");
-            progress = 2;
+            //progress = 2;
             //canFire = true;
             //Shader myShader = catObject.GetComponent<Shader>();
             //Texture myTexture = null;
             //catObject.renderer.material.SetTexture();
 
-            ChangeSkin(2);
-            movement.UnlockFire();
+            LevelUp();
             //mats[0] = headMat;
             //skeleton.materials = mats;
         }
@@ -90,10 +116,10 @@ public class Cat : MonoBehaviour
         if (progress == 2)
         {
             Debug.Log("Cat entered the Forest correctly.");
-            progress = 3;
+            //progress = 3;
             //canWind = true;
-            movement.UnlockWind();
-            ChangeSkin(3);
+            LevelUp();
+            //ChangeSkin(3);
         }
     }
 
@@ -107,7 +133,8 @@ public class Cat : MonoBehaviour
         inGorge = true;
         if (progress == 3)
         {
-            progress = 4;
+            //progress = 4;
+            LevelUp();
             Debug.Log("A winner is you!");
         }
     }
@@ -123,11 +150,9 @@ public class Cat : MonoBehaviour
         if (progress == 0)
         {
             Debug.Log("Cat entered the river correctly.");
-            progress = 1;
-            movement.UnlockWater();
+            //progress = 1;
             //canWater = true;
-
-            ChangeSkin(1);
+            //LevelUp();
         }
     }
 
