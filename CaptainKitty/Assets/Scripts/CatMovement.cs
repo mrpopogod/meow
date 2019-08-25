@@ -22,6 +22,8 @@ public class CatMovement
 
 	private GameObject _windPrefab = null;
 	private GameObject _wind = null;
+
+    public bool inWater { get; set; }
     
 
     public CatMovement(Rigidbody rb, Animator animator, Transform transform, GameObject firePrefab, GameObject windPrefab)
@@ -146,7 +148,7 @@ public class CatMovement
 
         
         //if Fire 1 (jump) is pressed
-        if (Input.GetAxis("Jump") > 0.0f && !_isJumping)
+        if (Input.GetAxis("Jump") > 0.0f && !_isJumping && !inWater)
         {
             catAnimator.SetBool("Jump", true);
             _isJumping = true;

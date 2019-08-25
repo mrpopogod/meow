@@ -9,6 +9,7 @@ public class Cat : MonoBehaviour
     private bool inForest = false;
     private bool inRiver = false;
     private bool inGorge = false;
+    private bool inWater = false;
 
     private int progress = 0;
 
@@ -80,5 +81,17 @@ public class Cat : MonoBehaviour
     public void LeftRiver()
     {
         inRiver = false;
+    }
+
+    public void EnteredWater()
+    {
+        inWater = true;
+        movement.inWater = inWater;
+    }
+
+    public void LeftWater()
+    {
+        inWater = false;
+        movement.inWater = inWater;
     }
 }
