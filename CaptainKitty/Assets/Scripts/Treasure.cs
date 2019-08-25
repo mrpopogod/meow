@@ -5,11 +5,15 @@ using UnityEngine;
 public class Treasure : MonoBehaviour
 {
     public AudioSource treasureSound;
+    public MeshFilter myMesh;
+    public Mesh closedMesh;
+    public Mesh openMesh;
     public bool isLocked = true;
     // Start is called before the first frame update
     void Start()
     {
         treasureSound = GetComponent<AudioSource>();
+        //myMesh = this.GetComponentInParent<MeshFilter>();
     }
 
     // Update is called once per frame
@@ -38,6 +42,10 @@ public class Treasure : MonoBehaviour
                 theCat.LevelUp();
                 treasureSound.Play();
                 isLocked = false;
+                if ((openMesh != null) && (myMesh != null))
+                {
+                    myMesh.mesh = openMesh;
+                }
             }
 
         }

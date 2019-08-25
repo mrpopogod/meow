@@ -281,3 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treasureSound: {fileID: 0}
+  myMesh: {fileID: 33639699724107356}
+  closedMesh: {fileID: 4300012, guid: 5f3a7deba91ee3341b2266db1be8c0a0, type: 3}
+  openMesh: {fileID: 4300088, guid: 5f3a7deba91ee3341b2266db1be8c0a0, type: 3}
+  isLocked: 1
