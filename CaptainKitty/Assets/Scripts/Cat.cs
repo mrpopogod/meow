@@ -147,4 +147,10 @@ public class Cat : MonoBehaviour
         inWater = false;
         movement.inWater = inWater;
     }
+	
+	public void KillPlane()
+	{
+		transform.position = new Vector3(0f, 7f, 0f);
+	}	
+	
 }
