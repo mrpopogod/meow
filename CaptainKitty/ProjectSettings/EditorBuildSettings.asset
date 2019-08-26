@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 716f0290a79ec4b47a9b22ebee939f13
   - enabled: 0
     path: Assets/Scenes/Desert.unity
     guid: 91eb56d0c7ea3534980686b43ef8a808
@@ -23,9 +26,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Prefab Staging.unity
     guid: 699fa627a64b0ac41b3e1fff226a5e0e
-  - enabled: 0
-    path: Assets/Scenes/End.unity
-    guid: 716f0290a79ec4b47a9b22ebee939f13
   - enabled: 0
     path: Assets/Scenes/River.unity
     guid: 0573466471e5a084a822df4ae576230c
