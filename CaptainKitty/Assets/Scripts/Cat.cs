@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cat : MonoBehaviour
 {
@@ -47,8 +48,10 @@ public class Cat : MonoBehaviour
         }
         if (progress > 3)
         {
-            SceneLoader mySceneLoader = this.GetComponent<SceneLoader>();
-            mySceneLoader.LoadNextScene();
+
+            SceneManager.LoadScene("End");
+            //SceneLoader mySceneLoader = this.GetComponent<SceneLoader>();
+            //mySceneLoader.LoadEndScene();
         }
 
 

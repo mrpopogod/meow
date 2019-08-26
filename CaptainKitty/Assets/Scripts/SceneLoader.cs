@@ -34,7 +34,7 @@ public class SceneLoader : MonoBehaviour
 			SceneManager.LoadScene("Level");
 		}
 
-		private void LoadEndScene()
+		public void LoadEndScene()
 		{
 			SceneManager.LoadScene("End");
 		}

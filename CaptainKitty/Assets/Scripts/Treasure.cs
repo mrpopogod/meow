@@ -42,13 +42,15 @@ public class Treasure : MonoBehaviour
                  if (theCat.progress == this.prereq){
                  }
                  */
-                theCat.LevelUp();
                 treasureSound.Play();
                 isLocked = false;
+
                 if ((openMesh != null) && (myMesh != null))
                 {
                     myMesh.mesh = openMesh;
                 }
+
+                theCat.LevelUp();
             }
 
         }
