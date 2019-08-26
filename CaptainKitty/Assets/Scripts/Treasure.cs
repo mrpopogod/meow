@@ -5,6 +5,7 @@ using UnityEngine;
 public class Treasure : MonoBehaviour
 {
     public AudioSource treasureSound;
+    public GameObject fancyParticles;
     public MeshFilter myMesh;
     public Mesh closedMesh;
     public Mesh openMesh;
@@ -32,8 +33,10 @@ public class Treasure : MonoBehaviour
             {
                 Debug.Log("Hey, we solved a puzzle, let's find the cat and let them know we did a good.");
                 Debug.Log(theCat.name);
-                
-                
+
+                var newPosition = gameObject.transform.position;
+                var effect = Instantiate(fancyParticles, newPosition, gameObject.transform.rotation);
+                Destroy(effect, 0.5f);
                 //TODO: Check if this chest can be unlocked right now
                 /*
                  if (theCat.progress == this.prereq){
