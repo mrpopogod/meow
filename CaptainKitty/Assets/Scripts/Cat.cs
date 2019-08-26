@@ -45,6 +45,11 @@ public class Cat : MonoBehaviour
         {
             movement.UnlockWind();
         }
+        if (progress > 3)
+        {
+            SceneLoader mySceneLoader = this.GetComponent<SceneLoader>();
+            mySceneLoader.LoadNextScene();
+        }
 
 
     }
