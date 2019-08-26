@@ -5,6 +5,7 @@ public class Cat : MonoBehaviour
     private CatMovement movement;
     public GameObject firePrefab;
     public GameObject windPrefab;
+    public GameObject waterPrefab;
     private bool inDesert = false;
     private bool inForest = false;
     private bool inRiver = false;
@@ -88,7 +89,7 @@ public class Cat : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        movement = new CatMovement(GetComponent<Rigidbody>(), GetComponent<Animator>(), GetComponent<Transform>(), firePrefab, windPrefab);
+        movement = new CatMovement(GetComponent<Rigidbody>(), GetComponent<Animator>(), GetComponent<Transform>(), firePrefab, windPrefab,waterPrefab);
         GameProgress.Progress.ChangeState(new InitialState());
 
         //TODO: If the catObject is null, assign it to the proper child.

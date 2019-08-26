@@ -14,15 +14,21 @@ public class CatMovement
     private GameObject _firePrefab = null;
     private float _fireRate = 1.5f;
     private float _fireLife = 1.0f;
+    private float _nextFire;
+
+    private GameObject _waterPrefab = null;
+    private float _waterRate = 0.05f;
+    private float _waterLife = 3.0f;
+    private float _nextWater;
+
     private float movementSpeed = 5.0f;
     private float sprintSpeed = 10.0f;
     private float rotationSpeed = 200.0f;
     private float jumpSpeed = 6.0f;
-    private float _nextFire;
 
     public bool canFire = false;
     public bool canWind = false;
-    public bool canWater = false;
+    public bool canWater = false; //sprint
 
     private GameObject _windPrefab = null;
 	private GameObject _wind = null;
@@ -30,7 +36,7 @@ public class CatMovement
     public bool inWater { get; set; }
     
 
-    public CatMovement(Rigidbody rb, Animator animator, Transform transform, GameObject firePrefab, GameObject windPrefab)
+    public CatMovement(Rigidbody rb, Animator animator, Transform transform, GameObject firePrefab, GameObject windPrefab, GameObject waterPrefab)
     {
         _rb = rb;
         catAnimator = animator;
@@ -39,6 +45,7 @@ public class CatMovement
         _transform = transform;
         _firePrefab = firePrefab;
 		_windPrefab = windPrefab;
+        _waterPrefab = waterPrefab;
     }
 
     public void UnlockWater()
@@ -148,11 +155,30 @@ public class CatMovement
         HandleFlames();
         HandleWind();
         var speed = movementSpeed;
-        if (Input.GetKey("left shift") || Input.GetKey("right shift"))
+        if (canWater)
         {
-          speed = sprintSpeed;
-        }
+            if (Input.GetKey("left shift") || Input.GetKey("right shift"))
+            {
+                speed = sprintSpeed;
 
+                //_nextFire = Time.time + _fireRate;
+                if ((_waterPrefab != null)&& (Time.time > _nextWater))
+                {
+                    _nextWater = Time.time + _waterRate;
+
+                    var pos = this._transform.position;// new Vector3(0, 0.0f, 0.0f);
+                    //pos.x -= 1.0f;
+                    var rot = this._transform.rotation;//Quaternion.Euler(0.0f, 0, 0); //
+                    var water = GameObject.Instantiate(_waterPrefab);//, _transform);
+                    water.transform.localRotation = rot;
+                    water.transform.position = pos;
+                    GameObject.Destroy(water, _waterLife);
+
+                    //catAnimator.SetBool("Meow", true);
+                    //_isActing = true;
+                }
+            }
+        }
         if (_isActing == true)
         {
             speed = 0f;
