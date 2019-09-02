@@ -50,7 +50,11 @@ public class Treasure : MonoBehaviour
                     myMesh.mesh = openMesh;
                 }
 
+                //Turn off light
+                this.transform.parent.GetComponentInChildren<Light>().enabled = false;
+
                 theCat.LevelUp();
+                FindObjectOfType<UIController>().ActivateUI();
             }
 
         }

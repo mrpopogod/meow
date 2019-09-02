@@ -13,7 +13,7 @@ public class ConversationController : MonoBehaviour
         "",
         "Welcome to the game!",
         "You're a cat. You'd like to evolve.",
-        "Interact with controls:\n\nMovement = WASD, Arrows, or Joystick\nJump = SPACE\nSprint = Hold SHIFT\nFire=F",
+        //"Interact with controls:\n\nMovement = WASD, Arrows, or Joystick\nJump = SPACE\nSprint = Hold SHIFT\nFire=F",
         "Okay, now go explore. You'll change states and evolve your powers until you can save the world."
     };
 
@@ -24,6 +24,7 @@ public class ConversationController : MonoBehaviour
         //this.
         //myText = //this.GetComponentInChildren(Text, false);// GetComponent("Text");
         //myText = (this.GetComponents<Text>())[0];
+        SetConversation(1);
     }
     
     public void OpenConversation()

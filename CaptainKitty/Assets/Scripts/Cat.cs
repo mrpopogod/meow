@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System;
 
 public class Cat : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class Cat : MonoBehaviour
     private bool inRiver = false;
     private bool inGorge = false;
     private bool hasWater = false;
+    public AudioSource musicPlayer;
 
     private bool inWater = false;
 
@@ -27,6 +30,25 @@ public class Cat : MonoBehaviour
     private int progress = 0;
     //public int catLevel = 0; //already captured in "progress"
 
+    public IEnumerator BeginTheEnd()
+    {
+        //WaitForSeconds(3);
+        FindObjectOfType<UIController>().GetDialogBox().OpenConversation();
+        FindObjectOfType<UIController>().GetDialogBox().UpdateConversation("YOU DID IT! Game ending in 3 seconds.");
+        Debug.Log("Starting to End in 3...");
+        yield return new WaitForSeconds(1);
+        Debug.Log("2...");
+        yield return new WaitForSeconds(1);
+        Debug.Log("1...");
+        yield return new WaitForSeconds(1);
+        Debug.Log("Goodbye");
+        SceneManager.LoadScene("End");
+    }
+
+    public int GetLevel()
+    {
+        return progress;
+    }
     public void LevelUp()
     {
         progress++;
@@ -48,8 +70,7 @@ public class Cat : MonoBehaviour
         }
         if (progress > 3)
         {
-
-            SceneManager.LoadScene("End");
+            StartCoroutine(BeginTheEnd());
             //SceneLoader mySceneLoader = this.GetComponent<SceneLoader>();
             //mySceneLoader.LoadEndScene();
         }
@@ -110,6 +131,14 @@ public class Cat : MonoBehaviour
         movement.Update();
         GameProgress.Progress.RunCurrentState();
         //Renderer.
+        if (Input.GetKey("escape"))
+        {
+            //TODO: pull up a prompt for "quit" or "restart"
+            Debug.Log("Trying to escape the game...");
+            //Application.Quit();
+            FindObjectOfType<UIController>().OpenQuit();
+        }
+        
     }
 
     public void EnteredDesert()

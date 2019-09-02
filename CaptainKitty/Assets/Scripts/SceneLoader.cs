@@ -36,6 +36,12 @@ public class SceneLoader : MonoBehaviour
 
 		public void LoadEndScene()
 		{
-			SceneManager.LoadScene("End");
+            SceneManager.LoadScene("End");
 		}
+
+    public void EndGame()
+    {
+        Debug.Log("Trying to end the game");
+        Application.Quit();
+    }
 }
